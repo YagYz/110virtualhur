@@ -24,3 +24,10 @@ link2.addEventListener('click', () => {
 link3.addEventListener('click', () => {
     scrollToElement('.header', 2);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('selectstart', function(e) {
+        e.preventDefault();
+        return false;
+    });
+});
