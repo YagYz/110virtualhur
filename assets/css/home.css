@@ -155,58 +155,59 @@ section .header{
     font-weight: 600;
 }
 
-.pilotinformation{
+.ap-btn{
+    padding: 50px;
+    margin-left: 40%;
+}
+
+.features{
     margin-top: 4rem;
     display: grid;
-    grid-template-columns: repeat(6, 2fr);
+    grid-template-columns: repeat(3, 2fr);
     gap: 2rem;
 }
 
-.pilotinformation .card{
+.features .card{
     background-color: #27272a;
     padding: 1rem;
     border: 2.5px solid transparent;
-    border-radius: 5px;
+    border-radius: 15px;
     transition: all 0.3s ease;
 }
 
-.pilotinformation .card:hover{
+.features .card:hover{
     background-color: #323232;
     border-color: #fff;
-    -ms-transform: scale(1.3);
-    -webkit-transform: scale(1.3);
-    transform: scale(1.3); 
 }
 
-.pilotinformation .card span{
+.features .card span{
     display: inline-block;
     background-color: #ffba14;
     padding: 2px 9px;
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: #fff;
     border-radius: 5px;
 }
 
-.pilotinformation .card h4{
+.features .card h4{
     margin-bottom: 0.5rem;
     color: #fff;
     font-size: 1.2rem;
     font-weight: 600;
 }
 
-.pilotinformation .card p{
+.features .card p{
     color: #ccc;
-    font-size: 0.75rem;
     margin-bottom: 1rem;
 }
 
-.pilotinformation .card a{
+.features .card a{
     color: #fff;
     transition: all 0.3s ease;
 }
 
-.pilotinformation .card a:hover{
+.features .card a:hover{
     color: #ffba14;
 }
 
@@ -215,6 +216,20 @@ section .header{
     margin: auto;
     text-align: center;
     color: #ccc;
+}
+
+.about{
+    position: relative;
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+.about p{
+    color: #ccc;
+    margin-bottom: 0.5rem;
 }
 
 footer{
@@ -280,4 +295,43 @@ footer .column > a:hover{
     color: #fff;
     font-size: 0.8rem;
     text-align: center;
+}
+
+@media (width < 900px){
+    .nav-links{
+        display: none;
+    }
+    header{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    header .image{
+        grid-area: 1/1/2/2;
+    }
+    .features{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .pricing{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    footer{
+        grid-template-columns: 1fr 200px;
+    }
+}
+
+@media (width < 600px){
+    header .image::before{
+        display: none;
+    }
+
+    .features{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .pricing{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    footer{
+        grid-template-columns: 1fr 150px;
+    }
 }
